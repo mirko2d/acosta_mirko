@@ -1,3 +1,4 @@
+import { Router } from "express";
 import { createJwt } from "../helpers/createJwt.js";
 import { createUser, getUserByCredentials } from "../models/user.model.js";
 
@@ -31,14 +32,12 @@ export const signUpCtrl = async (req, res) => {
 };
 
 export const signOutCtrl = (_req, res) => {
-  try {
-    // ! Completar la función signOutCtrl
-    res.clearCookie("token"); 
-    res.status(200).json({ message: "Sign out success" });
-  } catch (error) {
-    res.status(500).json({ message: error.message });
-  }
-};
+ 
+    // ! Completar la función signOutCtrl 
+    const {logout} = require('express-session')};
+    Router.post(logout,sign)
+    module.exports = Router
+
 
 export const getMeCtrl = (req, res) => {
   try {
